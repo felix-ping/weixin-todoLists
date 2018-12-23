@@ -110,11 +110,13 @@
 
 .icon-done{
     display: block;
-    width: 4px;
-    height: 4px;
+    width: 5px;
+    height: 5px;
     border-radius: 50%;
     background: #fff;
-    margin-right: 8px;
+    padding: 3px;
+    margin-right: 20px;
+    margin-left: 10px;
 }
 
 .done .content{

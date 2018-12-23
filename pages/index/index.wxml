@@ -2,7 +2,7 @@
     <toast hidden="{{tipsHidden}}" icon="warn" duration="3000" bindchange="toHideTips">
         请输入任务
     </toast>
-    
+
     <view class="create">
         <view class="section">
             <input bindinput="bindTask" placeholder="想做点什么呢？" value="{{task}}" />
@@ -17,24 +17,24 @@
     <view class="head">共 {{taskList.length}} 项任务</view>
 
     <view class="lists">
-        <block wx:for-items="{{taskList}}">
+        <block wx:for-items="{{taskList}}" wx:key='{{item}}'>
             <view wx:if="{{item.done}}" class="task-li done">
-                <view class="task-li-con" id="{{item.id}}" bindtap="toggleDone">
-                    <view class="icon-done"></view>
+                <view class="task-li-con" id="{{item.id}}" bindtap="toggleDone" bindtouchstart='touchStart' bindtouchend='touchEnd'>
+                    <view class="icon-done" ></view>
                     <view class="content">{{item.text}}</view>
                 </view>
-                <view class="task-li-remove" id="{{item.id}}" bindtap="toRemove">
-                    <view class="icon-remove">X</view>
-                </view>
+                <!-- <view class="task-li-remove" id="{{item.id}}" bindtap="toRemove">
+                    <view class="icon-remove">x</view>
+                </view> -->
             </view>
             <view wx:else class="task-li un-done">
-                <view class="task-li-con" id="{{item.id}}" bindtap="toggleDone">
+                <view class="task-li-con" id="{{item.id}}" bindtap="toggleDone" bindtouchstart='touchStart' bindtouchend='touchEnd'>
                     <view class="icon-done"></view>
                     <view class="content">{{item.text}}</view>
                 </view>
-                <view class="task-li-remove" id="{{item.id}}" bindtap="toRemove">
+                <!-- <view class="task-li-remove" id="{{item.id}}" bindtap="toRemove">
                     <view class="icon-remove">X</view>
-                </view>
+                </view> -->
             </view>
         </block>
     </view>
